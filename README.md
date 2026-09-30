@@ -178,7 +178,7 @@ const CONFIG = {
 
     landmark: "Odil Ahmedov yonidan kirganda",
 
-    googleMapsLink: "CHANGE_GOOGLE_MAPS_LINK",
+    googleMapsLink: "https://maps.app.goo.gl/SJoqYLqn3u3xrokS6",
 
     weddingMusicUrl: "CHANGE_MUSIC_URL"
 };
