@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
@@ -101,7 +100,7 @@ footer .names{font-size:2.4rem;color:var(--gold)}
   <div class="hero-bg photo" data-photo="hero"></div>
   <div class="glass hero-card">
     <p class="sub e1">Bizning to‘yimiz</p>
-    <h1 class="e2"><span data-c="brideName">Malika</span> <i>&</i> <span data-c="groomName">Murod</span></h1>
+    <h1 class="e2"><span data-c="brideName">Kamola</span> <i>&</i> <span data-c="groomName">Kamoldin</span></h1>
     <p class="e3">Sizni hayotimizdagi eng baxtli kunimizga taklif qilamiz.</p>
     <p class="date e4" data-c="dateLong"></p>
     <button class="btn e5" id="openBtn">💌 Taklifnomani ochish</button>
@@ -187,8 +186,8 @@ footer .names{font-size:2.4rem;color:var(--gold)}
 <script>
 /* ===== SOZLAMALAR — faqat shu yerni o'zgartiring ===== */
 const CONFIG = {
-  brideName: "Malika",
-  groomName: "Murod",
+  brideName: "Kamola",
+  groomName: "Kamoldin",
   weddingDate: "2026-12-20",          // YYYY-MM-DD
   weddingTime: "18:00",               // HH:MM
   weddingAddress: "Toshkent, CHANGE_ADDRESS",
