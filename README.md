@@ -92,7 +92,7 @@ footer .names{font-size:2.4rem;color:var(--gold)}
 </style>
 </head>
 <body>
-<div id="loader"><div class="ring">❤</div><p class="names">M & M</p></div>
+<div id="loader"><div class="ring">❤</div><p class="names">K & K</p></div>
 <div id="progress"></div>
 <canvas id="fx"></canvas>
 
@@ -108,11 +108,11 @@ footer .names{font-size:2.4rem;color:var(--gold)}
 </header>
 
 <section id="couple" class="sec">
-  <h2 class="rv">Malika ❤️ Murod</h2>
+  <h2 class="rv">Kamola ❤️ Kamoldin</h2>
   <p class="lead rv">Ikki qalb, bir sevgi va yangi bir hikoya...</p>
   <div class="pair">
-    <figure class="rv left"><div class="frame photo" data-photo="malika"></div><figcaption data-c="brideName">Malika</figcaption><small>Kelin</small></figure>
-    <figure class="rv right"><div class="frame photo" data-photo="murod"></div><figcaption data-c="groomName">Murod</figcaption><small>Kuyov</small></figure>
+    <figure class="rv left"><div class="frame photo" data-photo="malika"></div><figcaption data-c="brideName">Kamola</figcaption><small>Kelin</small></figure>
+    <figure class="rv right"><div class="frame photo" data-photo="murod"></div><figcaption data-c="groomName">Kamoldin</figcaption><small>Kuyov</small></figure>
   </div>
 </section>
 
@@ -177,7 +177,7 @@ footer .names{font-size:2.4rem;color:var(--gold)}
 </section>
 
 <footer>
-  <p class="names"><span data-c="brideName">Malika</span> & <span data-c="groomName">Murod</span></p>
+  <p class="names"><span data-c="brideName">Kamola</span> & <span data-c="groomName">Kamoldin</span></p>
   <p>Sevgi bilan, sizni kutib qolamiz ❤️</p>
 </footer>
 
@@ -188,9 +188,9 @@ footer .names{font-size:2.4rem;color:var(--gold)}
 const CONFIG = {
   brideName: "Kamola",
   groomName: "Kamoldin",
-  weddingDate: "2026-12-20",          // YYYY-MM-DD
-  weddingTime: "18:00",               // HH:MM
-  weddingAddress: "Toshkent, CHANGE_ADDRESS",
+  weddingDate: "2026-10-10",          // YYYY-MM-DD
+  weddingTime: "11-Oktabr",               // HH:MM
+  weddingAddress: "To'raqo'rg'on yumani Toshkent MFY kosonsoy ko'chasi Mo'jjal Odil ahmedov yonidan kirganda 175 uy ",
   googleMapsLink: "https://maps.google.com/?q=Tashkent",   // CHANGE_GOOGLE_MAPS_LINK
   weddingMusicUrl: "CHANGE_MUSIC_URL", // masalan: assets/music.mp3
   photos: { hero:"", malika:"", murod:"", 1:"", 2:"", 3:"", 4:"" } // masalan: "assets/hero.jpg"
@@ -221,7 +221,7 @@ tick(); setInterval(tick, 1000);
 
 /* Music */
 const music = $("#music"); let audio;
-if (!WEDDING_MUSIC_URL.startsWith("CHANGE")) { audio = new Audio(WEDDING_MUSIC_URL); audio.loop = true; audio.volume = .6; music.classList.add("show"); }
+if (!WEDDING_MUSIC_URL.startsWith("CHANGE")) { audio = new Audio([WEDDING_MUSIC_URL](https://www.youtube.com/watch?v=9Z_9VUrLUE4&list=RD9Z_9VUrLUE4&start_radio=1)); audio.loop = true; audio.volume = .6; music.classList.add("show"); }
 const setPlay = on => { music.classList.toggle("play", on); music.textContent = on ? "♪" : "🔇"; };
 music.onclick = () => { if (!audio) return; audio.paused ? audio.play().then(() => setPlay(true)) : (audio.pause(), setPlay(false)); };
 $("#openBtn").onclick = () => {
