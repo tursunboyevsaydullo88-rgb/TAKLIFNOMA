@@ -180,7 +180,7 @@ const CONFIG = {
 
     googleMapsLink: "CHANGE_GOOGLE_MAPS_LINK",
 
-    weddingMusicUrl: "CHANGE_MUSIC_URL"
+    weddingMusicUrl: "[CHANGE_MUSIC_URL](https://www.youtube.com/watch?v=7maJOI3QMu0&list=RD7maJOI3QMu0&start_radio=1)"
 };
 
 const $ = s => document.querySelector(s);
