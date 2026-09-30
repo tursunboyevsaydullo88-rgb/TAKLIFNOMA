@@ -1,4 +1,3 @@
-
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
@@ -171,7 +170,7 @@ const CONFIG = {
     weddingDate: "2026-10-11",
     weddingDateDisplay: "11-oktabr",
 
-    weddingTime: "CHANGE_TIME",
+    weddingTime: "17:00",
 
     weddingAddress: "To‘raqo‘rg‘on tumani, Toshkent MFY, Kosonsoy ko‘chasi, 175-uy",
 
@@ -201,7 +200,7 @@ const mLabel = () => mBtn.textContent = audio.paused ? "🔇 Paused" : "🎵 Pla
 audio.addEventListener("play", mLabel); audio.addEventListener("pause", mLabel);
 mBtn.onclick = () => audio.paused ? audio.play().catch(mLabel) : audio.pause();
 
-// Open invitation (this click starts the music)
+// Open invitation
 $("#openBtn").onclick = () => {
     if (musicOk) { audio.play().catch(mLabel); mBtn.hidden = false; mLabel(); }
     $("#opening").classList.add("hide");
@@ -241,9 +240,14 @@ document.querySelectorAll("[data-rsvp]").forEach(b => b.onclick = () => {
     msg.classList.remove("show"); void msg.offsetWidth; msg.classList.add("show");
 });
 
-// Scroll reveal
+// Scroll reveal (Staggered fix applied)
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .15 });
-document.querySelectorAll(".rv").forEach((el, i) => { if (el.closest(".tl")) el.style.setProperty("--d", "0.05s"); io.observe(el); });
+document.querySelectorAll(".rv").forEach((el, i) => { 
+    if (el.closest(".tl")) {
+        el.style.setProperty("--d", (i * 0.08) + "s"); 
+    }
+    io.observe(el); 
+});
 
 // Progress + back to top
 const bar = $("#progress"), top = $("#top");
@@ -256,7 +260,7 @@ addEventListener("scroll", () => raf = raf || requestAnimationFrame(() => {
 }), { passive: true });
 top.onclick = () => scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
 
-// Petals (few, subtle)
+// Petals
 function petals() {
     ["🌸", "💗", "🌷", "✨", "🌸", "💗", "🌷", "✨"].forEach((c, i) => {
         const p = document.createElement("span");
