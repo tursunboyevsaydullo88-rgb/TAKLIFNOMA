@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Malika & Murod — To‘y taklifnomasi</title>
+<title>Kamola & Kamoldin — To‘y taklifnomasi</title>
 <meta name="theme-color" content="#fdf0f2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
