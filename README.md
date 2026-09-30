@@ -21,6 +21,8 @@ border:1px solid rgba(217,179,140,.55);border-radius:24px;box-shadow:0 10px 35px
 #loader{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
 background:linear-gradient(160deg,#fff,var(--pink));transition:opacity .8s,visibility .8s}
 #loader.gone{opacity:0;visibility:hidden}
+#loader{animation:autohide .8s 3s forwards}
+@keyframes autohide{to{opacity:0;visibility:hidden}}
 #loader h2{font-size:clamp(1.6rem,7vw,2.4rem);color:var(--rose)}
 .ring{font-size:3rem;animation:pulse 1.2s ease-in-out infinite}
 @keyframes pulse{50%{transform:scale(1.18)}}
@@ -170,7 +172,7 @@ const CONFIG = {
     weddingDate: "2026-10-11",
     weddingDateDisplay: "11-oktabr",
 
-    weddingTime: "17:00",
+    weddingTime: "CHANGE_TIME",
 
     weddingAddress: "To‘raqo‘rg‘on tumani, Toshkent MFY, Kosonsoy ko‘chasi, 175-uy",
 
@@ -188,7 +190,7 @@ document.title = V.couple + " — To‘y taklifnomasi";
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // Loader
-addEventListener("load", () => setTimeout(() => $("#loader").classList.add("gone"), 1100));
+setTimeout(() => $("#loader").classList.add("gone"), 1200);
 
 // Music
 const audio = new Audio();
@@ -200,7 +202,7 @@ const mLabel = () => mBtn.textContent = audio.paused ? "🔇 Paused" : "🎵 Pla
 audio.addEventListener("play", mLabel); audio.addEventListener("pause", mLabel);
 mBtn.onclick = () => audio.paused ? audio.play().catch(mLabel) : audio.pause();
 
-// Open invitation
+// Open invitation (this click starts the music)
 $("#openBtn").onclick = () => {
     if (musicOk) { audio.play().catch(mLabel); mBtn.hidden = false; mLabel(); }
     $("#opening").classList.add("hide");
@@ -240,27 +242,22 @@ document.querySelectorAll("[data-rsvp]").forEach(b => b.onclick = () => {
     msg.classList.remove("show"); void msg.offsetWidth; msg.classList.add("show");
 });
 
-// Scroll reveal (Staggered fix applied)
+// Scroll reveal
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .15 });
-document.querySelectorAll(".rv").forEach((el, i) => { 
-    if (el.closest(".tl")) {
-        el.style.setProperty("--d", (i * 0.08) + "s"); 
-    }
-    io.observe(el); 
-});
+document.querySelectorAll(".rv").forEach((el, i) => { if (el.closest(".tl")) el.style.setProperty("--d", "0.05s"); io.observe(el); });
 
 // Progress + back to top
-const bar = $("#progress"), top = $("#top");
+const bar = $("#progress"), toTop = $("#top");
 let raf;
 addEventListener("scroll", () => raf = raf || requestAnimationFrame(() => {
     raf = 0;
     const h = document.documentElement.scrollHeight - innerHeight;
     bar.style.width = (h > 0 ? scrollY / h * 100 : 0) + "%";
-    top.classList.toggle("on", scrollY > 400);
+    toTop.classList.toggle("on", scrollY > 400);
 }), { passive: true });
-top.onclick = () => scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+toTop.onclick = () => scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
 
-// Petals
+// Petals (few, subtle)
 function petals() {
     ["🌸", "💗", "🌷", "✨", "🌸", "💗", "🌷", "✨"].forEach((c, i) => {
         const p = document.createElement("span");
